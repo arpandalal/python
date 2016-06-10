@@ -15,13 +15,9 @@ def doit():
     print('Altitude = {0:0.2f} m',a)
     print('Sealevel Pressure = {0:0.2f} Pa',sp)
     params = urllib.urlencode({'field1': temp, 'field2': p, 'field3': a, 'field4': sp,'key':'29QOQE9MGEOS0YD8'})
-    print(11111);
     headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
-    print(11112);
     conn = httplib.HTTPConnection("api.thingspeak.com:80")
-    print(11113);
     conn.request("POST", "/update", params, headers)
-    print(11114);
     response = conn.getresponse()
     print (response.status, response.reason)
     data = response.read()
