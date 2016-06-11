@@ -19,6 +19,7 @@ def doit():
     conn = httplib.HTTPConnection("api.thingspeak.com:80")
     conn.request("POST", "/update", params, headers)
     response = conn.getresponse()
+
     print (response.status, response.reason)
     data = response.read()
     conn.close()
