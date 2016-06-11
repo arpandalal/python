@@ -1,3 +1,4 @@
+
 import time
 import RPi.GPIO as GPIO
 times = int(input("Enter blink times:"))
